@@ -3,7 +3,7 @@
 * Project Name:  CDL LiveStream Viewer *
 * Created By: Bailey Hutchings *
 
-Background Information: 
+<b>Background Information: </b>
 
 The CDL (Call of Duty League) hosts regular Livestreams on youtube and their own website, 
 These livestreams generally cover the Professional Call of Duty tournaments that take place, 
@@ -13,7 +13,7 @@ and 2x EXP Tokens. These items are unlocked at certain Milestones for watching t
 with certian Unlockables requiring more than 10 Hours of watch time.
 
 
-Description: 
+<b>Description: </b>
 
 This Python Script was designed to automate the process involved with waiting, signing in, 
 navigating and watching CDL Livestreams, Allowing the users to obtain the unlockable 
@@ -24,7 +24,7 @@ within one .py file/document, a production version of this code would be split u
 making the code easier to manage/update.
 
 
-software requirements:
+<b>software requirements:</b>
 
 - Must have python installed (This Script is designed for python 3.9)
 	- Python 'selenium' Module (Script Created with v3.141.0)
@@ -39,8 +39,7 @@ software requirements:
 	- Program also requires chrome's directory path location 
 	- (required by: users_info.txt)
 
-
-Using the | user_info.txt | file:
+<b>Using the | user_info.txt | file:</b>
 
 - the User_info.txt file is a file used to contain the directory paths,
 for: (Google Chrome & the ChromeDriver Web Driver) which are required by the script.
@@ -63,7 +62,7 @@ then save and re-run the CDL Viewer Script
 	
 
 
-Important information:
+<b>Important information:</b>
 
 - At this point the application only works with google chrome, to recieve in game rewards,
  YouTube should be signed in on chrome (as webdriver module cannot sign in.)
@@ -83,7 +82,7 @@ this script, and a patch will need to be pushed out.
 		the script will fail to find on screen elements.
 
 	
-Future updates / Patches:
+<b>Future updates / Patches:</b>
 
 - userbility Updates:
 	- Additional Browsers to be added
