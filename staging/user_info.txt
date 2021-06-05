@@ -1,0 +1,2 @@
+chromedriver_path: C:\Program Files (x86)\chromedriver.exe
+chrome_path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
