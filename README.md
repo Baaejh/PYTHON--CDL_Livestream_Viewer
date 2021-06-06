@@ -1,4 +1,4 @@
-# CDL Viewing script README:
+# Call of Duty - Automated livestream viewer (Python):
 
 * Project Name:  CDL LiveStream Viewer *
 * Created By: Bailey Hutchings *
@@ -38,6 +38,7 @@ making the code easier to manage/update.
 - Google Chrome Must be installed
 	- Program also requires chrome's directory path location 
 	- (required by: users_info.txt)
+	
 
 <b>Using the | user_info.txt | file:</b>
 
@@ -59,7 +60,15 @@ then save and re-run the CDL Viewer Script
 		*	chrome_path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe   *
 		*                                                                                  *
 		************************************************************************************
-	
+
+
+<b>Instructions for use:</b>
+
+- The application is the 'CDL_viewer.py' file. This script is designed to run within a console window, to start execution of the
+  application, just double click the 'CDL_viewer.py' file like any other application.
+  
+- The Script is rather self sufficient, in that the only requirement is that the user enters the directory path locations for     'chromeDriver' & 'Google chrome' within the 'users_info.txt' file.
+	- The 'users_info.txt' file can be copied from github, and inserted within the same directory as the CDL_Viewer.py application 		 file, if not the application will create its own, if one does not exist, or if the file has been altered in any way (apart             from entering the desied file locations/paths), then the user must enter in the required directory paths.
 
 
 <b>Important information:</b>
