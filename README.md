@@ -3,7 +3,7 @@
 * Project Name:  CDL LiveStream Viewer *
 * Created By: Bailey Hutchings *
 
-<b>Background Information: </b>
+<b>| Background Information: |</b>
 
 The CDL (Call of Duty League) hosts regular Livestreams on youtube and their own website, 
 These livestreams generally cover the Professional Call of Duty tournaments that take place, 
@@ -13,7 +13,7 @@ and 2x EXP Tokens. These items are unlocked at certain Milestones for watching t
 with certian Unlockables requiring more than 10 Hours of watch time.
 
 
-<b>Description: </b>
+<b>| Description: |</b>
 
 This Python Script was designed to automate the process involved with waiting, signing in, 
 navigating and watching CDL Livestreams, Allowing the users to obtain the unlockable 
@@ -24,7 +24,7 @@ within one .py file/document, a production version of this code would be split u
 making the code easier to manage/update.
 
 
-<b>software requirements:</b>
+<b>| software requirements: |</b>
 
 - Must have python installed (This Script is designed for python 3.9)
 	- Python 'selenium' Module (Script Created with v3.141.0)
@@ -40,16 +40,19 @@ making the code easier to manage/update.
 	- (required by: users_info.txt)
 
 
-<b>Instructions for use:</b>
+<b>| Instructions for use: |</b>
 
 - The application is the 'CDL_viewer.py' file. This script is designed to run within a console window, to start execution of the
   application, just double click the 'CDL_viewer.py' file like any other application.
   
+  	Note: The 'CDL_viewer.py' File must be opened with the Python, so that when the file is double clicked it opens with the 	       Python Terminal/Console.
+  
 - The Script is rather self sufficient, in that the only requirement is that the user enters the directory path locations for     'chromeDriver' & 'Google chrome' within the 'users_info.txt' file.
-	- The 'users_info.txt' file can be copied from github, and inserted within the same directory as the CDL_Viewer.py application 		 file, if not the application will create its own, if one does not exist, or if the file has been altered in any way (apart             from entering the desied file locations/paths), then the user must enter in the required directory paths.
+
+- The 'users_info.txt' file can be copied from github, and inserted within the same directory as the CDL_Viewer.py application       file, if not the application will create its own, if one does not exist, or if the file has been altered in any way (apart         from entering the desied file locations/paths), then the user must enter in the required directory paths.
 	
 
-<b>Using the [user_info.txt] file:</b>
+<b>| Using the [user_info.txt] file: |</b>
 
 - the User_info.txt file is a file used to contain the directory paths,
 for: (Google Chrome & the ChromeDriver Web Driver) which are required by the script.
@@ -71,7 +74,7 @@ then save and re-run the CDL Viewer Script
 		************************************************************************************
 
 
-<b>Important information:</b>
+<b>| Important information: |</b>
 
 - At this point the application only works with google chrome, to recieve in game rewards,
  YouTube should be signed in on chrome (as webdriver module cannot sign in.)
@@ -91,7 +94,7 @@ this script, and a patch will need to be pushed out.
 		the script will fail to find on screen elements.
 
 	
-<b>Future updates / Patches:</b>
+<b>| Future updates / Patches: |</b>
 
 - userbility Updates:
 	- Additional Browsers to be added
