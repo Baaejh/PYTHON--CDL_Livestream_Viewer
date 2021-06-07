@@ -44,6 +44,7 @@ class ClassFindVideo:
             self.driver.quit()
             sys.exit()
 
+
         # checks stream (pauses if playing) and closes browser as stream should be playing in YouTube
         # NOTE: Script will finish executing after this function complete
         def check_CDL_stream_activity():
@@ -108,10 +109,11 @@ class ClassFindVideo:
                 print("\n error playing in youtube ... \n \n"
                       + str(watch_youtube_exception))
                 print()
-                print("Check the Google Chrome directory path in: 'users_info.txt'")
+                print("Check the Google Chrome directory path in: 'users_info.txt' \n")
                 print("Please restart application ...")
                 self.driver.quit()
                 sys.exit()
+
 
         # Calling Function that Opens stream in youtube (make sure youtube is logged in on Chrome)
         watch_in_youtube()  
@@ -122,7 +124,7 @@ class ClassFindVideo:
 
     # Waits 15 minutes and then runs parent function to check for a live game
     def wait_for_livestream(self):
-        print("Waiting For Live Game...")
+        print("Waiting For Live Game... \n")
         time.sleep(900)  # Waits 15 mins
         print('wait complete...')
         self.find_live_container()
@@ -152,6 +154,7 @@ class ClassFindVideo:
         # *** checks if stream is playing ***
         self.open_youtube()
 
+
     # finds the container with the link to the live game (CDL Webpage) and .clicks()
     def find_live_container(self):
 
@@ -179,13 +182,13 @@ class ClassFindVideo:
                     By.CLASS_NAME, 'score-strip-itemstyles__ScoreStripItemContainer-sc-1502vsd-0')))
 
             # Locating the Live Game Containers (Top Panels) at top of Webpage
-            container1 = self.driver.find_elements_by_class_name(
+            live_game_containers = self.driver.find_elements_by_class_name(
                 'score-strip-itemstyles__ScoreStripItemContainer-sc-1502vsd-0')
 
-            # Loop finds live game from top panels of webpage stored within (container1)
-            while live_game_counter <= len(container1):
+            # Loop finds live game from top panels of webpage stored within (live_game_containers)
+            while live_game_counter <= len(live_game_containers):
 
-                if live_game_counter >= len(container1):  # No possibility of Live Game
+                if live_game_counter >= len(live_game_containers):  # No possibility of Live Game
                     print("No Live Games available ... ")
                     print("Exiting Script ... Check CDL Roster & Try Again Later... ")
                     self.driver.quit()
@@ -193,13 +196,13 @@ class ClassFindVideo:
                     break
 
                 # reading live game container text to determine if there is a live game
-                if container1[live_game_counter].text[:15] != "WATCH MATCH VOD":
-                    if container1[live_game_counter].text[:21] != "TICKETS NOT AVAILABLE":  # Game Found
+                if live_game_containers[live_game_counter].text[:15] != "WATCH MATCH VOD":
+                    if live_game_containers[live_game_counter].text[:21] != "TICKETS NOT AVAILABLE":  # Game Found
 
-                        print("Live game Found: " + container1[live_game_counter].text)
+                        print("Live game Found: " + live_game_containers[live_game_counter].text)
 
                         # Passing in the Selected Container with live game link to click_live_game()
-                        self.click_live_game(container1[live_game_counter])
+                        self.click_live_game(live_game_containers[live_game_counter])
                         break
 
                     else:
@@ -228,6 +231,7 @@ def retrieve_path_locations():
 
     # Creates the blank File 'users_info.txt' for user to enter their details
     def create_credentials_file():
+
         users_information.clear()  # Clears Dictionary containing users info
         try:
             # Adding Content to users_input.txt File
@@ -237,16 +241,17 @@ def retrieve_path_locations():
 
         except Exception as file_creation_exception:
             print(file_creation_exception)
-            print("Error creating users_info.txt File ...")
+            print("Error creating 'users_info.txt' File ... \n")
+            print("Delete / Remove the 'users_info.txt' file and restart application \n")
             input("Press enter to Continue")
             sys.exit()
 
         finally:
             print()
-            print("user_info.txt has been created and reset !")
-            print('locate "user_info.txt" inside the main CDL Viewer app directory, and then ')
-            print("enter path locations for the required fields - after the colon ':' ")
-            print('Save the file and restart this application')
+            print("user_info.txt has been created and reset ! \n")
+            print("locate 'user_info.txt' inside the main CDL Viewer app directory, and")
+            print("enter the path locations for the required fields - after the colon ':' \n")
+            print("Save the 'users_info.txt' file and restart this application \n")
             input("Press enter to Continue")
             sys.exit()   
                 
@@ -283,22 +288,22 @@ def retrieve_path_locations():
                         else:  # if no input detected, reset file
                             print()
                             print(path_template[item][:colon_index + 1] +
-                                  " Section of the user_info.txt is blank...")
+                                  " Section of the 'user_info.txt' is blank...")
                             create_credentials_file()
 
                     else:  # Re-creates the credentials file because template code didn't match
                         print()
-                        print("Something is not right with the users_info.txt file ")
+                        print("Something is not right with the 'users_info.txt' file \n")
                         create_credentials_file()
         else:
             print()
-            print("No users_info.txt File Found ...")
+            print("No 'users_info.txt' File Found ...")
             create_credentials_file()  # Creating New File
 
     except Exception as users_info_exception:
         print("\nSomething went wrong while collecting credentials ... \n \n"
               + str(users_info_exception)
-              + "\n\ncheck users_info.txt and restart application.")
+              + "\n\ncheck 'users_info.txt' and restart application.")
 
         input("Press Enter to Continue ...")
         sys.exit()
@@ -340,6 +345,7 @@ def log_in_optional():
             else:
                 print("No input detected")  # No Input Detected
                 continue
+
     except Exception as optional_log_in_exception:
         print("\nError while prompting user for input ...\n\n")
         print(optional_log_in_exception)
@@ -355,7 +361,7 @@ def collect_user_input():
     try:
         while True:
             username_input = input("Enter Username: ")
-            password_input = getpass.getpass("Enter Password: ")
+            password_input = getpass.getpass("Enter Password (Input Hidden): ")
 
             # if the user enters something, add it to users_information dictionary:
             if (username_input and password_input):
@@ -369,7 +375,7 @@ def collect_user_input():
                 users_information["username"] = username_clean
                 users_information["password"] = password_clean
             else:
-                print("Error with credentials, make sure to fill in both fields")
+                print("Error with credentials, make sure to fill in both fields... ")
                 continue
             break
     except:
@@ -477,8 +483,8 @@ def log_in(driver_arg):  # | Logs in |
             # calling method of class instance to start searching for live games
             stream_instance.find_live_container()
         else:
-            print("Unable to sign in ... Check Log in credentials")
-            print('Script exiting.')
+            print("Unable to sign in ... Check Log in credentials \n")
+            print('Script Exiting.')
             input("Press Enter to Continue ...")
             driver.quit()
             sys.exit()
