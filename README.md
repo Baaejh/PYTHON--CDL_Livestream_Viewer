@@ -96,6 +96,10 @@ this script, and a patch will need to be pushed out.
 	
 <b>| Future updates / Patches: |</b>
 
+- Code Refactoring / Fixes / Testing:
+	- This project Runs consistantly and contains basic error handling ect, but a production 
+	  build would require further testing to ensure maximum usability / reliability.
+
 - userbility Updates:
 	- Additional Browsers to be added
 	- Support for 2 step authentication for activision accounts
